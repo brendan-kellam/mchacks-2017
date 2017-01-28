@@ -8,11 +8,12 @@ serializer = semantria.JsonSerializer()
 
 session = semantria.Session("9be4f54f-8900-4ebd-bd76-4812a5f5d820", "6f5ada12-b6e7-4344-900d-8dcce0557bfc", serializer, use_compression=True)
 
-initialTexts = ["Hello world!"]
+initialTexts = ["Math test next tuesday"]
 
 for text in initialTexts:
-	doc = {"id ": str(uuid4()).replace("-", ""), "text": text}
+	doc = {"id": str(uuid4()).replace("-", ""), "text": text}
 
+print(doc)
 status = session.queueDocument(doc)
 if status == 202:
 	print("\"", doc["id"], "\" document queued successfully.", "\r\n")
@@ -20,13 +21,12 @@ if status == 202:
 length = len(initialTexts)
 results = []
 
-while len(results) < length:
-   print("Retrieving your processed results...", "\r\n")
-   time.sleep(2)
-   # get processed documents
-   status = session.getProcessedDocuments()
-   results.extend(status)
+print("Retrieving your processed results...", "\r\n")
+# get processed documents
+status = session.getProcessedDocuments()
+results.extend(status)
 
+print(results)
 
 for data in results:
    # print document sentiment score
