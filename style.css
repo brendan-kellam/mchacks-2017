@@ -1,4 +1,13 @@
 body {
-	width: 50px;
-	height: 100px;
+	width: 450px;
+	height: 200px;
+}
+
+.middle-area {
+	margin: auto;
+	position: relative;
+}
+
+#mainText {
+	resize: none;
 }

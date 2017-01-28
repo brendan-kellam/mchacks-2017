@@ -1,3 +1,7 @@
+
+from flask import Flask
+app = Flask(__name__)
+
 from __future__ import print_function
 import httplib2
 import os
