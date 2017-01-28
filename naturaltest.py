@@ -26,9 +26,18 @@ print("Retrieving your processed results...", "\r\n")
 status = session.getProcessedDocuments()
 results.extend(status)
 
+<<<<<<< Updated upstream
 
 for data in results:
    #print document sentiment score
+=======
+#print(results)
+
+
+for data in results:
+   
+   # print document sentiment score
+>>>>>>> Stashed changes
    print("Document ", data["id"], " Sentiment score: ", data["sentiment_score"], "\r\n")
 	
    #print document themes
@@ -42,3 +51,6 @@ for data in results:
       print("Entities:", "\r\n")
       for entity in data["entities"]:
          print("\t", entity["title"], " : ", entity["entity_type"]," (sentiment: ", entity["sentiment_score"], ")", "\r\n")
+
+
+

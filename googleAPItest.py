@@ -5,7 +5,7 @@ def run_quickstart():
     # [START language_quickstart]
     # Imports the Google Cloud client library
     from google.cloud import language
-	
+
     # Instantiates a client
     language_client = language.Client()
 
