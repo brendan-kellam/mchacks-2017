@@ -1,20 +1,14 @@
-# imports the Google Cloud client library
-from google.cloud import language
-
 def run_quickstart():
     # [START language_quickstart]
     # Imports the Google Cloud client library
     from google.cloud import language
-
+	
+	key = AIzaSyDSbvBtwgkEp1grVowTNbBAeb5Qq8xwfaY
     # Instantiates a client
     language_client = language.Client()
 
     # The text to analyze
-    text = (
-     'Google, headquartered in Mountain View, unveiled the '
-     'new Android phone at the Consumer Electronic Show.  '
-     'Sundar Pichai said in his keynote that users love '
-     'their new Android phones.')
+    text = ("Jack's birthday party next Thursday")
     document = language_client.document_from_text(text)
 
     # Detects the sentiment of the text
