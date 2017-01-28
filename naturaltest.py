@@ -8,7 +8,7 @@ serializer = semantria.JsonSerializer()
 
 session = semantria.Session("9be4f54f-8900-4ebd-bd76-4812a5f5d820", "6f5ada12-b6e7-4344-900d-8dcce0557bfc", serializer, use_compression=True)
 
-initialTexts = ["Math test next tuesday"]
+initialTexts = ["Tim's birthday party next week"]
 
 for text in initialTexts:
 	doc = {"id": str(uuid4()).replace("-", ""), "text": text}
@@ -26,19 +26,18 @@ print("Retrieving your processed results...", "\r\n")
 status = session.getProcessedDocuments()
 results.extend(status)
 
-print(results)
 
 for data in results:
-   # print document sentiment score
+   #print document sentiment score
    print("Document ", data["id"], " Sentiment score: ", data["sentiment_score"], "\r\n")
-
-   # print document themes
+	
+   #print document themes
    if "themes" in data:
       print("Document themes:", "\r\n")
       for theme in data["themes"]:
          print("     ", theme["title"], " (sentiment: ", theme["sentiment_score"], ")", "\r\n")
 
-   # print document entities
+   #print document entities
    if "entities" in data:
       print("Entities:", "\r\n")
       for entity in data["entities"]:
